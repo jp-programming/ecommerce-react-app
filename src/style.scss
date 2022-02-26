@@ -1,0 +1,19 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html, body, #root{
+    height: 100vh;
+    font-size: 62.5%;
+    font-family: 'Consolas', sans-serif;
+}
+
+#root{
+    font-size: 1.6rem;
+}
+
+@import './css/variables.scss';
+@import './css/NavBar.scss';
+@import './css/CartWidget.scss';

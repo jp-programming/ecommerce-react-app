@@ -1,0 +1,28 @@
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    height: 7rem;
+    padding: 2rem 5rem;
+    background-color: $primary-color;
+    color: $secondary-color;
+}
+
+.navbar__brand{
+    font-size: 2.5rem;
+}
+
+.navbar__container{
+    display: flex;
+    flex-grow: 1;
+    justify-content: space-between;
+}
+
+.navbar__links{
+    display: flex;
+    width: 85%;
+    justify-content: space-evenly;
+    a{
+        text-decoration: none;
+        color: $secondary-color;
+    }
+}
