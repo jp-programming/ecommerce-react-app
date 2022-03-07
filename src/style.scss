@@ -14,6 +14,8 @@ html, body, #root{
     font-size: 1.6rem;
 }
 
-@import './css/variables.scss';
-@import './css/NavBar.scss';
-@import './css/CartWidget.scss';
+@import './css/variables';
+@import './css/NavBar';
+@import './css/CartWidget';
+@import './css/ItemListContainer';
+@import './css/ItemCount';

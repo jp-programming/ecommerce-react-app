@@ -1,0 +1,32 @@
+.itemCount{
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    .itemCount__buttons{
+        display: flex;
+        column-gap: 3rem;
+        width: fit-content;
+        margin: 0 auto;
+        span{
+            font-size: 2rem;
+            align-self: center;
+        }
+    }
+}
+
+.itemCount__decreaseBtn{
+    border: none;
+    background: none;
+    font-size: 3rem;
+    cursor: pointer;
+}
+
+.itemCount__increaseBtn{
+    @extend .itemCount__decreaseBtn;
+}
+
+.itemCount__addBtn{
+    width: fit-content;
+    padding: 0.5rem 2rem;
+    cursor: pointer;
+}
