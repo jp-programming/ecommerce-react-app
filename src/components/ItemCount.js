@@ -2,6 +2,7 @@ import { useState } from "react";
 
 const ItemCount = ({ initial, stock, onAdd }) => {
     const [ count, setCount ] = useState(initial);
+    
     return ( 
         <div className="itemCount">
             <div className="itemCount__buttons">

@@ -1,6 +1,6 @@
-const Item = ({game}) => {
+const Item = ({ game, routeChange }) => {
     return ( 
-        <div className="item">
+        <div onClick={routeChange} className="item">
             <img className="item__image" src={game.img} alt="Imagen de videojuego" />
             <h3>{game.name}</h3>
             <span>Género: {game.genre}</span>
