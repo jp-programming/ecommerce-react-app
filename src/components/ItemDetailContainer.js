@@ -3,7 +3,6 @@ import { toast } from "react-toastify";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import ItemDetail from "./ItemDetail";
-import ItemCount from "./ItemCount";
 
 import { gamesArr } from "../data";
 
@@ -33,7 +32,6 @@ const ItemDetailContainer = () => {
     return ( 
         <div className="itemDetailContainer">
             <ItemDetail game={game}/>
-            <ItemCount initial={1} stock={game.stock}/>
         </div>
     );
 }

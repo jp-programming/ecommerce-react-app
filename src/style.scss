@@ -1,3 +1,5 @@
+@import './css/variables';
+
 *{
     padding: 0;
     margin: 0;
@@ -7,14 +9,17 @@
 html, body, #root{
     height: 100vh;
     font-size: 62.5%;
-    font-family: 'Consolas', sans-serif;
+    font-family: $font;
+}
+
+button{
+    font-family: $font;
 }
 
 #root{
     font-size: 1.6rem;
 }
 
-@import './css/variables';
 @import './css/NavBar';
 @import './css/CartWidget';
 @import './css/ItemListContainer';

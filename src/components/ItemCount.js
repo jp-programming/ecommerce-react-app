@@ -7,14 +7,14 @@ const ItemCount = ({ initial, stock, onAdd }) => {
         <div className="itemCount">
             <div className="itemCount__buttons">
                 <button className="itemCount__decreaseBtn" onClick={() => {
-                    if( count-1 !== 0 ) setCount(count-1);
+                    if( count > initial ) setCount(count-1);
                 }}>-</button>
                 <span>{count}</span>
                 <button className="itemCount__increaseBtn" onClick={() => {
-                    if( count + 1 <= stock) setCount(count+1);
+                    if( count < stock) setCount(count+1);
                 }}>+</button>
             </div>
-            <button className="itemCount__addBtn" onClick={onAdd}>Agregar al carrito</button>
+            <button className="itemCount__addBtn" onClick={() => onAdd(count)}>Agregar al carrito</button>
         </div>
     );
 }
