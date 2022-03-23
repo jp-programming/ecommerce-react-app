@@ -10,7 +10,8 @@ const CartContext = ({ children }) => {
 
     const addGame = (game, quantity) => {
         if(isInCart(game.id)){
-            setCart(cart.map((g) => g.id === game.id 
+            const copyCart = [...cart];
+            setCart(copyCart.map((g) => g.id === game.id 
                 ? {...g, quantity: g.quantity + quantity} 
                 : g
             ));
@@ -22,8 +23,9 @@ const CartContext = ({ children }) => {
         setTotalAmount(Number((totalAmount + (game.price * quantity)).toFixed(2)));
     };
 
-    const removeGame = (id) => { 
-        setCart(cart.filter((game) => 
+    const removeGame = (id) => {
+        const copyCart = [...cart];
+        setCart(copyCart.filter((game) => 
             game.id !== id || 
             (
                 setTotal(total-game.quantity), 
