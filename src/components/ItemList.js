@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import Item from "./Item";
 
-const ItemList = ({games}) => {
+const ItemList = ({ games }) => {
     const navigate = useNavigate();
 
     const routeChange = (e) => {

@@ -1,10 +1,13 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { Link } from "react-router-dom";
+
 import ItemCount from "./ItemCount";
+import { cartContext } from "./CartContext";
 
 const ItemDetail = ({ game }) => {
-    
     const [ quantity, setQuantity ] = useState(0);
+
+    const { addGame } = useContext(cartContext);
 
     const onAdd = (q) => {
         setQuantity(q);
@@ -25,7 +28,7 @@ const ItemDetail = ({ game }) => {
                 <span>Stock: {game.stock}</span>
                 {
                     quantity 
-                    ? <Link className="itemDetail__finishButton" to="/cart" >Terminar compra</Link>
+                    ? <Link onClick={() => addGame(game, quantity)} className="itemDetail__finishButton" to="/cart" >Terminar compra</Link>
                     : <ItemCount initial={1} stock={game.stock} onAdd={onAdd} />
                 }
             </div>

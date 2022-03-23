@@ -11,18 +11,18 @@ import CartContext from "./components/CartContext";
 
 const App = () => {
     return (
-        <BrowserRouter>
-            <NavBar/>
-            <CartContext>
+        <CartContext>
+            <BrowserRouter>
+                <NavBar/>
                 <Routes>
                     <Route path="/" element={<ItemListContainer greeting="Productos disponibles"/>} />
                     <Route path="/platform/:type" element={<ItemListContainer greeting="Productos disponibles"/>} />
                     <Route path="/game/:name" element={<ItemDetailContainer/>} />
                     <Route path="/cart" element={<Cart/>} />        
                 </Routes>
-            </CartContext>
-            <ToastContainer/>
-        </BrowserRouter>
+                <ToastContainer/>
+            </BrowserRouter>
+        </CartContext>
     );
 }
 

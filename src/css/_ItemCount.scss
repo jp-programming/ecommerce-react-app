@@ -36,8 +36,8 @@
     cursor: pointer;
     transition: 0.5s;
     &:hover{
-        background-color: lighten($primary-color, 5%);
-        color: lighten($secondary-color, 5%);
+        background-color: lighten($primary-color, 10%);
+        color: lighten($secondary-color, 10%);
         border-radius: 15px;
     }
 }

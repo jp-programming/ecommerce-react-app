@@ -20,7 +20,7 @@ export const gamesArr = [
     {
         id: 3,
         name: 'Red Dead Redemption 2',
-        img: 'https://s1.gaming-cdn.com/images/products/5679/orig/red-dead-redemption-2-pc-game-rockstar-cover.jpg',
+        img: 'https://cdn1.epicgames.com/epic/offer/RDR2PC1227_Epic%20Games_860x1148-860x1148-b4c2210ee0c3c3b843a8de399bfe7f5c.jpg',
         genre: 'Adventure-Action',
         price: 49.99,
         platform: ['pc', 'ps', 'xbox'],
@@ -38,7 +38,7 @@ export const gamesArr = [
     {
         id: 5,
         name: 'Super Smash Bros. Ultimate',
-        img: 'https://s1.gaming-cdn.com/images/products/3000/orig/super-smash-bros-ultimate-switch-switch-game-nintendo-eshop-europe-cover.jpg',
+        img: 'https://cdn.cdkeys.com/700x700/media/catalog/product/s/u/super-smash-bros-u_base_1_3.jpg',
         genre: 'Fight-Action',
         price: 45.00,
         platform: ['nintendo'],

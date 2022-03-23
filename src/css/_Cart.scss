@@ -1,0 +1,90 @@
+.cartContent{
+    display: flex;
+    flex-direction: column;
+    row-gap: 1.5rem;
+    width: 90%;
+    margin: 0 auto;
+    .cartContent__info{
+        display: flex;
+        align-items: center;
+        column-gap: 2rem;
+        height: 10rem;
+        border-radius: 3px;
+        box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+        .cartContent__image{
+            width: 8rem;
+            height: 100%;
+        }
+        .cartContent__detail{
+            display: flex;
+            justify-content: space-around;
+            flex-grow: 1;
+        }
+        .cartContent__deleteButton{
+            width: 5rem;
+            height: 50%;
+            margin-right: 2rem;
+            font-size: 2rem;
+            background-color: $primary-color;
+            color: $secondary-color;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.8s;
+            &:hover{
+                background-color: lighten($primary-color, 10%);
+                color: lighten($secondary-color, 10%);
+                border-radius: 25px;
+            }
+        }
+    }
+    .cartContent__total{
+        padding: 1rem 1.5rem;
+        align-self: flex-end;
+        background-color: $primary-color;
+        color: $secondary-color;
+        font-size: 1.8rem;
+    }
+}
+
+.cartContent__emptyButton{
+    width: 80%;
+    align-self: center;
+    font-size: 1.8rem;
+    background-color: $primary-color;
+    color: $secondary-color;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.8s;
+    &:hover{
+        background-color: lighten($primary-color, 10%);
+        color: lighten($secondary-color, 10%);
+    }
+}
+
+.cartContent__empty{
+    display: flex;
+    flex-direction: column;
+    row-gap: 2rem;
+    width: 90%;
+    margin: 20rem auto;
+    align-items: center;
+    .cartContent__emptyMsg{
+        font-size: 2rem;
+    }
+    .cartContent__linkToHome{
+        width: fit-content;
+        padding: 1rem 1.5rem;
+        text-decoration: none;
+        background-color: $primary-color;
+        color: $secondary-color;
+        font-weight: 700;
+        transition: 0.5s;
+        &:hover{
+            background-color: lighten($primary-color, 10%);
+            color: lighten($secondary-color, 10%);
+            border-radius: 15px;
+        }
+    }
+}
