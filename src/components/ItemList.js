@@ -4,8 +4,8 @@ import Item from "./Item";
 const ItemList = ({ games }) => {
     const navigate = useNavigate();
 
-    const routeChange = (e) => {
-        const path = `/game/${e.currentTarget.children[1].innerText.replaceAll(' ', '_')}`;
+    const routeChange = (id) => {
+        const path = `/game/${id}`;
         navigate(path);
     };
 

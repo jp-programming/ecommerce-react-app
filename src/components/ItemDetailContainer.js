@@ -4,30 +4,34 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import ItemDetail from "./ItemDetail";
 
-import { gamesArr } from "../data";
+import { db } from "../Firebase";
+import { doc, getDoc } from "firebase/firestore";
 
 const ItemDetailContainer = () => {
     const [ game, setGame ] = useState({});
-    const { name } = useParams();
+    const { id } = useParams();
 
     useEffect(() => {
-        const gamePromise = new Promise((res, rej) => {
-            toast.loading('Cargando producto');
-            setTimeout(() => {
-                res(gamesArr.find((game) => (game.name.toLowerCase()) === (name.toLowerCase().replaceAll('_', ' '))) );
-            }, 2000);
-        });
+        toast.loading('Cargando producto');
+    
+        const docRef = doc(db, 'games', id);
+        const docSnap = getDoc(docRef);
         
-        gamePromise
-            .then((data) => {
-                setGame(data);
+        docSnap
+            .then((snapshot)=>{
+                const game = {
+                    id: snapshot.id,
+                    ...snapshot.data()
+                }
+
+                setGame(game);
                 toast.dismiss();
             })
             .catch((err) => {
                 toast.dismiss();
                 toast.error('Error al cargar el producto');
             });
-    }, [name]);
+    }, [id]);
 
     return ( 
         <div className="itemDetailContainer">
