@@ -21,8 +21,7 @@ const ItemDetail = ({ game }) => {
                 <span>Género: {game.genre}</span>
                 <span><b>${game.price}</b></span>
                 <span>Plataformas: { 
-                        game.platform?.reduce((previousName, currentName) => 
-                            `${previousName}, ${currentName}`.toUpperCase())
+                        game.platform?.toString().toUpperCase().replaceAll(',', ', ')
                     }
                 </span>
                 <span>Stock: {game.stock}</span>
