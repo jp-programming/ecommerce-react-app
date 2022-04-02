@@ -43,7 +43,7 @@ const AuthContext = ({ children }) => {
     }
 
     const forgotPassword = (email) => sendPasswordResetEmail(auth, email, 
-        { url: 'http://localhost:3000/login' });
+        { url: `${window.location.origin}/login` });
 
     const resetPassword = (oobCode, newPassword) => 
         confirmPasswordReset(auth, oobCode, newPassword);

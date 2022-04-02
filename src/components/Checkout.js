@@ -13,18 +13,14 @@ const Checkout = () => {
 
     useEffect(() => {
         if( newOrder ) {
-            const getUser = async () => {
+            const generateOrder = async () => {
                 const docRef = doc(db, 'users', uid);
                 const docSnap = await getDoc(docRef);
-                
-                return docSnap.data();
-            };
-            
-            const generateOrder = async (userInfo) => {
+
                 const order = {
                     id: uid,
                     buyer: {
-                        ...userInfo
+                        ...docSnap.data()
                     },
                     games: cart,
                     total: total,
@@ -32,12 +28,11 @@ const Checkout = () => {
                     date: serverTimestamp()
                 };
             
-                const docRef = await addDoc(collection(db, 'orders'), order);
-
-                setOrderId(docRef.id)
+                const orderRef = await addDoc(collection(db, 'orders'), order);
+                setOrderId(orderRef.id)
             };
     
-            generateOrder(getUser());
+            generateOrder();
         }
         
         return () => {
