@@ -1,15 +1,16 @@
-import { useContext } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link } from "react-router-dom";
 
-import { cartContext } from "./CartContext";
+import { useCart } from "../context/CartContext";
 
 const CartWidget = () => {
-    const { total } = useContext(cartContext);
+    const { total } = useCart();
 
     return (
         total
         ?   <Link className="cartWidget" to="/cart">
-                <i className="fa-solid fa-cart-shopping cartWidget"> <span>{total}</span></i>
+                <FontAwesomeIcon icon="fa-solid fa-cart-shopping" /> 
+                <span>{total}</span>
             </Link>
         :   <></>
     )

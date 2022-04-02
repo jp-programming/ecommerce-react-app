@@ -18,7 +18,7 @@ const ItemDetailContainer = () => {
         const docSnap = getDoc(docRef);
         
         docSnap
-            .then((snapshot)=>{
+            .then((snapshot) => {
                 const game = {
                     id: snapshot.id,
                     ...snapshot.data()

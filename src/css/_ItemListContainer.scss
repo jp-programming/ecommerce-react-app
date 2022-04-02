@@ -1,4 +1,7 @@
 .itemListContainer{
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
     width: 95%;
     margin: 0 auto;
 }

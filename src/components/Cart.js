@@ -1,10 +1,19 @@
-import { useContext } from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 
-import { cartContext } from "./CartContext";
+import { useCart } from "../context/CartContext";
+import Loader from "./Loader";
 
 const Cart = () => {
-    const { cart, totalAmount, removeGame, clear } = useContext(cartContext);
+    const [ loading, setLoading ] = useState(true);
+    const { cart, totalAmount, removeGame, clear, createOrder } = useCart();
+
+    const handleCheckout = () => createOrder(true);
+
+    if( loading ) {
+        setTimeout(() => setLoading(false), 1000);
+        return <Loader/>;
+    }
 
     return ( 
         <div className="cartContent">
@@ -25,7 +34,10 @@ const Cart = () => {
                             </div>
                         )
                     }
-                    <span className="cartContent__total">Total: ${totalAmount}</span>
+                    <div className="cartContent__footer">
+                        <Link onClick={handleCheckout} to="/checkout">Realizar orden</Link>
+                        <span className="cartContent__total">Total: ${totalAmount}</span>
+                    </div>
                 </>
                 : <div className="cartContent__empty"> 
                     <p className="cartContent__emptyMsg">

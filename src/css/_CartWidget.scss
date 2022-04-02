@@ -1,7 +1,7 @@
 .cartWidget{
+    display: flex;
+    column-gap: 0.2rem;
     color: $secondary-color;
-    cursor: pointer;
-    span{
-        font-size: 1.2rem;
-    }
+    text-decoration: none;
+    font-size: 1.8rem;
 }

@@ -1,0 +1,91 @@
+.auth-container{
+    height: 100%;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 1rem;
+    background-color: $secondary-color;
+
+    .auth-container__links{
+        display: flex;
+        flex-direction: column;
+        row-gap: 0.5rem;
+        padding: 1rem 2rem;
+        align-items: center;
+        margin-top: 1rem;
+        font-size: 1.6rem;
+        font-weight: 600;
+        border-radius: 5px;
+        background-color: $primary-color;
+        a{
+            color: $secondary-color;
+            text-decoration: none;
+            &:hover{
+                color: lighten($secondary-color, 80%);
+            }
+        }
+    }
+}
+
+.auth-container__form{
+    width: 45rem;
+    padding: 5rem 10rem;
+    display: flex;
+    flex-direction: column;
+    row-gap: 1.5rem;
+    background-color: $bg-color;
+    border-radius: 5px;
+    box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.1);
+    font-weight: 700;
+
+    input{
+        height: 3rem;
+        border-radius: 3px;
+        border: none;
+        padding: 0.5rem 1rem;
+        font-size: 1.6rem;
+        background-color: $primary-color;
+        color: $secondary-color;
+        &:focus{
+            outline: none;
+            border: 3px solid $secondary-color;
+        }
+    }
+
+    .auth-container__logInButton{
+        margin-top: 1rem;
+        width: 50%;
+        height: 3rem;
+        background-color: $primary-color;
+        color: $secondary-color;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        order: 1;
+        font-weight: 700;
+        align-self: center;
+        transition: 0.8s;
+        &:hover{
+            background-color: lighten($primary-color, 10%);
+            color: lighten($secondary-color, 10%);
+        }
+    }
+
+    .auth-container__signInButton{
+        @extend .auth-container__logInButton;
+    }
+
+    .auth-container__googleLogIn{
+        @extend .auth-container__logInButton;
+    }
+
+    .auth-container__confirmButton{
+        @extend .auth-container__logInButton;
+    }
+}
+
+
+

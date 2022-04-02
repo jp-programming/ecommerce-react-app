@@ -18,8 +18,13 @@ button{
 
 #root{
     font-size: 1.6rem;
+    display: flex;
+    flex-direction: column;
 }
 
+@import './css/Loader';
+@import './css/Main';
+@import './css/Form';
 @import './css/NavBar';
 @import './css/CartWidget';
 @import './css/Cart';
@@ -29,3 +34,5 @@ button{
 @import './css/Item';
 @import './css/ItemDetailContainer';
 @import './css/ItemDetail';
+@import './css/Checkout';
+@import './css/Footer';

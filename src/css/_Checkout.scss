@@ -1,0 +1,44 @@
+.checkout{
+    background-color: $secondary-color;
+    height: 80%;
+    display: flex;
+    justify-content: center;
+    .checkout__container{
+        display: flex;
+        flex-direction: column;
+        row-gap: 0.5rem;
+        width: fit-content;
+        align-self: center;
+        background-color: $bg-color;
+        border-radius: 5px;
+        box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.1);
+        font-weight: 700;
+        padding: 2rem 4rem;
+    }
+    .checkout__empty{
+        display: flex;
+        flex-direction: column;
+        row-gap: 2rem;
+        width: 90%;
+        margin: 20rem auto;
+        align-items: center;
+        .h2{
+            font-size: 2rem;
+            text-align: center;
+        }
+        a{
+            width: fit-content;
+            padding: 1rem 1.5rem;
+            text-decoration: none;
+            background-color: $primary-color;
+            color: $secondary-color;
+            font-weight: 700;
+            transition: 1.5s;
+            &:hover{
+                padding: 1rem 8rem;
+                background-color: lighten($primary-color, 10%);
+                color: lighten($secondary-color, 10%);
+            }
+        }
+    }
+}

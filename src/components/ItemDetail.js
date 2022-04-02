@@ -1,13 +1,13 @@
-import { useState, useContext } from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 
 import ItemCount from "./ItemCount";
-import { cartContext } from "./CartContext";
+import { useCart } from "../context/CartContext";
 
 const ItemDetail = ({ game }) => {
     const [ quantity, setQuantity ] = useState(0);
 
-    const { addGame } = useContext(cartContext);
+    const { addGame } = useCart();
 
     const onAdd = (q) => {
         setQuantity(q);
@@ -21,7 +21,7 @@ const ItemDetail = ({ game }) => {
                 <span>Género: {game.genre}</span>
                 <span><b>${game.price}</b></span>
                 <span>Plataformas: { 
-                        game.platform?.toString().toUpperCase().replaceAll(',', ', ')
+                        game.platform?.join(', ').toUpperCase()
                     }
                 </span>
                 <span>Stock: {game.stock}</span>

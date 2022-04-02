@@ -1,9 +1,15 @@
 import CartWidget from "./CartWidget";
 import { Link } from "react-router-dom";
+import { useAuth } from "../context/AuthContext";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const NavBar = () => {
+    const { logOut } = useAuth();
+    
+    const handleLogOut = async () => await logOut(); 
+
     return (
-        <div className="navbar">
+        <header className="navbar">
             <Link to="/" className="navbar__brand">Brand</Link>
             <div className="navbar__container">
                 <nav className="navbar__links">
@@ -13,8 +19,14 @@ const NavBar = () => {
                     <Link to="/platform/xbox">Xbox</Link>
                 </nav> 
                 <CartWidget/>
+                
+                <FontAwesomeIcon
+                    className="navbar__logoutIcon" 
+                    onClick={handleLogOut} 
+                    icon="fa-solid fa-right-from-bracket" 
+                />
             </div> 
-        </div>
+        </header>
     )
 }
 
