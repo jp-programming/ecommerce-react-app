@@ -18,7 +18,7 @@ const Login = () => {
 
     const [ loading, setLoading ] = useState(true);
 
-    const { logIn, logInWithGoogle, forgotPassword } = useAuth();
+    const { logIn, logInWithGoogle, forgotPassword, googleAuth } = useAuth();
     const navigate = useNavigate();
 
     const handleChange = (e) => onChange(e, user, setUser);
@@ -48,6 +48,7 @@ const Login = () => {
     const handleGoogleSignIn = async () => {
         try{
             await logInWithGoogle();
+            googleAuth();
             navigate('/');
         } catch(error){
             error.code === 'auth/popup-closed-by-user'

@@ -11,7 +11,8 @@ import {
     confirmPasswordReset
 } from "firebase/auth";
 
-import { auth } from "../Firebase";
+import { auth, db } from "../Firebase";
+import { doc, getDoc, setDoc } from 'firebase/firestore';
 
 export const authContext = createContext();
 const { Provider } = authContext;
@@ -20,6 +21,7 @@ export const useAuth = () => useContext(authContext);
 
 const AuthContext = ({ children }) => {
     const [ user, setUser ] = useState(null);
+    const [ isGoogle, setIsGoogle ] = useState(false);
     const [ loading, setLoading ] = useState(true);
     
     useEffect(() => {
@@ -28,8 +30,21 @@ const AuthContext = ({ children }) => {
             setTimeout(() => setLoading(false), 1000);
         });
 
+        const createUser = async () => {
+            const docSnap = await getDoc(doc(db, 'users', user.uid))
+            docSnap.data() || setDoc(doc(db, 'users', user.uid), {
+                name: user.displayName,
+                email: user.email,
+                phone: user.phoneNumber || ''
+            });
+        }
+
+        if( isGoogle && user) {
+            createUser();   
+        }
+
         return () => unsuscribe();
-    }, []);
+    }, [user, isGoogle]);
 
     const signUp = (email, password) => 
         createUserWithEmailAndPassword(auth, email, password);
@@ -50,6 +65,8 @@ const AuthContext = ({ children }) => {
     
     const logOut = () => signOut(auth);
 
+    const googleAuth = () => setIsGoogle(true);
+
     const contextValue = {
         user,
         loading,
@@ -58,7 +75,8 @@ const AuthContext = ({ children }) => {
         logInWithGoogle,
         forgotPassword,
         resetPassword,
-        logOut
+        logOut,
+        googleAuth
     };
 
     return (

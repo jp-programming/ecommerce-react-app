@@ -1,0 +1,21 @@
+.not-found-page{
+    display: flex;
+    flex-direction: column;
+    background-color: $primary-color;
+    color: $secondary-color;
+    padding: 20px;
+    text-align: center;
+    a{
+        font-size: 1.8rem;
+        color: $secondary-color;
+        text-decoration: none;
+        transition: 1s;
+        &:hover{
+            padding: 1rem 2rem;
+            font-weight: 700;
+            border-radius: 5px;
+            background-color: $secondary-color;
+            color: $primary-color;
+        }
+    }
+}

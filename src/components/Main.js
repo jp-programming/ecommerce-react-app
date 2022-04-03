@@ -11,6 +11,7 @@ import Footer from "./Footer";
 
 import ProtectedRoute from "../auth/ProtectedRoute";
 import Loader from "./Loader";
+import NotFoundPage from "./NotFoundPage";
 
 const Main = () => {
     const [ loading, setLoading ] = useState(true);
@@ -31,6 +32,7 @@ const Main = () => {
                         <Route path="/game/:id" element={<ItemDetailContainer/>} />
                         <Route path="/cart" element={<Cart/>} />
                         <Route path="/checkout" element={<Checkout/>}/>
+                        <Route path="/*" element={<NotFoundPage/>}/>
                     </Routes>
                     <Footer/>
                 </CartContext>
