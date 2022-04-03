@@ -12,7 +12,7 @@ const Footer = () => {
                         <FontAwesomeIcon icon="fa-brands fa-github" />
                     </a>
                 </div>
-                <span>@jp_programming</span>
+                <span>@jp-programming</span>
             </div>
         </footer>
     );

@@ -85,9 +85,9 @@ const CartContext = ({ children }) => {
         setUpdate(true);
     };
 
-    const removeGame = (id) => {
+    const removeGame = async (id) => {
         const copyCart = [...cart];
-        updateDoc(doc(db, 'cart', uid), {
+        await updateDoc(doc(db, 'cart', uid), {
             cart: arrayRemove(copyCart.find((g) => g.id === id 
                 && updateQT(db, uid, { total, quantity: g.quantity, totalAmount, price: g.price}, '-')
             ))
