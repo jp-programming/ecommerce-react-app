@@ -9,7 +9,7 @@ import { doc, getDoc, addDoc, collection, serverTimestamp } from "firebase/fires
 const Checkout = () => {
     const [ orderId, setOrderId ] = useState('');
     const { user:{uid} } = useAuth();
-    const { cart, total, totalAmount, newOrder, createOrder } = useCart();
+    const { cart, total, totalAmount, newOrder, createOrder, clear } = useCart();
 
     useEffect(() => {
         if( newOrder ) {
@@ -30,6 +30,7 @@ const Checkout = () => {
             
                 const orderRef = await addDoc(collection(db, 'orders'), order);
                 setOrderId(orderRef.id)
+                clear();
             };
     
             generateOrder();
@@ -38,7 +39,7 @@ const Checkout = () => {
         return () => {
             createOrder(false);
         }
-    }, [uid, cart, total, totalAmount, newOrder, createOrder]);
+    }, [uid, cart, total, totalAmount, newOrder, createOrder, clear]);
 
     return (
         <div className="checkout">
