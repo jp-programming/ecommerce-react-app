@@ -1,70 +1,51 @@
-# Getting Started with Create React App
+[![Netlify Status](https://api.netlify.com/api/v1/badges/69d13cad-a6ce-4d48-8ee5-e1173bd09ed0/deploy-status)](https://app.netlify.com/sites/oggo/deploys)
+# **oGGo _(ecommerce-react-app)_**
+## **Description**
+This app is a simple ecommerce app built with [React](https://reactjs.org/) and [Firebase](https://firebase.google.com). 
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+**oGGo** allows you to 
+* Create an account 
+* Login
+* Login with google
+* Reset password (sends an email)
+* See all products at home page
+* Click an item (detail page)
+    * **Cart**
+    * See all products added
+    * Add products 
+    * Remove 
+    * Empty
+    * Checkout
 
-## Available Scripts
+Also filters products by differents categories, log out account, pages with differents endpoints and has a loading view.
 
-In the project directory, you can run:
+> If you are not logged in, you can't access to app.
 
-### `npm start`
+## **How to run it**
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+    git clone https://github.com/jp-programming/ecommerce-react-app.git
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+    or
 
-### `npm test`
+    git clone git@github.com:jp-programming/ecommerce-react-app.git
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+    cd ecommerce-react-app
+    npm install
+    npm start
+## **Dependencies**
 
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+    @fortawesome/fontawesome-svg-core: ^6.1.1
+    @fortawesome/free-brands-svg-icons: ^6.1.1
+    @fortawesome/free-solid-svg-icons: ^6.1.1
+    @fortawesome/react-fontawesome: ^0.1.18 
+    firebase: ^9.6.9
+    node-sass: ^7.0.1
+    react: ^17.0.2
+    react-dom: ^17.0.2
+    react-router-dom: ^6.2.2
+    react-scripts: 5.0.0
+    react-toastify: ^8.2.0
+    validator: ^13.7.0
+## **Deploy** 
+### [Netlify app](https://oggo.netlify.app)
+![App image](/public/oggo-app.png)
